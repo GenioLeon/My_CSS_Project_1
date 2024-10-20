@@ -1,6 +1,10 @@
 #Call Methods:
 
-install.packages("pacman")
+#setup 
+if (!require("pacman")) {
+  install.packages("pacman")
+}
+
 pacman::p_load(
   ggplot2,
   dplyr, 
