@@ -18,11 +18,10 @@ skim(Natural_disasters)
 Natural_disasters %>%
   pivot_wider(
     names_from = Year, # first
-    values_from = count # second
+    values_from = c(Deaths, Injuries, Homelessness, high_death) # second
   )
 However, no need to pivot for this Natural disaster dataset  
 ''' 
-
 
 
 # Select only relevant columns
