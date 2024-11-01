@@ -79,13 +79,13 @@ homelessness_ND
 # We can also use Automation to make this process more efficient:
 combined_Table_ND = function(i) {
   homelessness_ND = ND_average %>%
-    arrange(desc(average_homelessness)) %>%
-    slice(0:10) %>%
-    # Apply formatting for the table:
-    kable(caption = "Top 10 Countries by Average Homelessness") %>%
-    kable_styling("striped") %>%
-    kable_classic(full_width = FALSE)
-  homelessness_ND
+  arrange(desc(average_homelessness)) %>%
+  slice(0:10) %>%
+  # Apply formatting for the table:
+  kable(caption = "Top 10 Countries by Average Homelessness") %>%
+  kable_styling("striped") %>%
+  kable_classic(full_width = FALSE)
+homelessness_ND
 }
 
 

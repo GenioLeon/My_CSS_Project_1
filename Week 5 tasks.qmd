@@ -1,0 +1,143 @@
+---
+title: "Week 5 tasks"
+format:
+  html:
+    citations-hover: true
+    footnotes-hover: true
+editor: visual
+---
+
+# Text formating examples:
+
+::: panel-tabset
+*italic*
+
+**bold**
+
+~~strikeout~~
+
+`code`
+
+superscript^2^ subscript~2~
+
+[underline]{.underline} [small caps]{.smallcaps}
+
+# Headings:
+
+# 1st Level Header
+
+## 2nd Level Header
+
+### 3rd Level Header
+
+# Lists:
+
+-   Bulleted list item 1
+
+-   Item 2
+
+    -   Item 2a
+
+    -   Item 2b
+
+1.  Numbered list item 1
+
+2.  Item 2. The numbers are incremented automatically in the output.
+
+# Links and images:
+
+<http://example.com>
+
+[linked phrase](http://example.com)
+
+![optional caption text](quarto.png){fig-alt="Quarto logo and the word quarto spelled in small case letters"}
+
+# Tables:
+
+| First Header | Second Header |
+|--------------|---------------|
+| Content Cell | Content Cell  |
+| Content Cell | Content Cell  |
+:::
+
+## Running Code
+
+When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+quarto::quarto_render("docname.qmd") --to html/pdf
+```
+
+## Pandoc fenced div
+
+Start and end with equal number of : - minimum of 3 ::: Add curly brackets to indicate the start/end of class {.class} or {sometimes-class}
+
+::: class
+All this content can be modified
+:::
+
+Or layout things in separate columns:
+
+::: {layout-ncol="2"}
+![](image.png){fig-alt="Description of image 1"}
+
+![](image2.png){fig-alt="Description of image 1"}
+:::
+
+## Panel Tabsets
+
+You can split up and flip between sections of a page, rather than having two columns for instance
+
+::: panel-tabset
+### Element 1
+
+```{r}
+#| eval: false
+head(mtcars)
+```
+
+### Element 2
+
+...content...
+:::
+
+## Footnotes
+
+You can create inline footnotes like so: some inline text with a\[\^1\] \[\^1\]: footnote
+
+## Customising chunk output:
+
+::: panel-tabset
+-   **eval: false** prevents code from being evaluated. (And obviously if the code is not run, no results will be generated). This is useful for displaying example code, or for disabling a large block of code without commenting each line
+
+-   **include: false** runs the code, but doesn’t show the code or results in the final document. Use this for setup code that you don’t want cluttering your report
+
+-   **echo: false** prevents code, but not the results from appearing in the finished file. Use this when writing reports aimed at people who don’t want to see the underlying R code.
+
+-   **message: false** or warning: false prevents messages or warnings from appearing in the finished file.
+:::
+
+## Figure Sizing:
+
+::: panel-tabset
+## There are five main options that control figure sizing:
+
+fig-width, fig-height, fig-asp, out-width and out-height
+:::
+
+## Presentations with format:
+
+::: class
+## Quarto comes with 10 built-in themes:
+
+beige, blood, dark, default, league, moon, night, serif, simple, sky, solarized
+
+## code example:
+
+---
+title: "Presentation"
+format:
+  revealjs: 
+    theme: [simple, custom.scss]
+---
+:::
